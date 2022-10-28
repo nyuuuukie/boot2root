@@ -245,3 +245,7 @@ lmezard:G!@M6f4Eatau{sF"
 ```
 
 Continue in the `puzzles` section...
+
+# References
+ - https://nmap.org/book/man.html
+ - https://phoenixnap.com/kb/nmap-scan-open-ports
