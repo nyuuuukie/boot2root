@@ -26,7 +26,7 @@ int main() {
 }
 EOF
 
-gcc src.c -o genseq
+gcc -std=c99 src.c -o genseq
 
 ./genseq > $NUMSFILE
 
